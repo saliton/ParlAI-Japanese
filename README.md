@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Soliton-Analytics-Team/ParlAI-Japanese/blob/master/ParlAI.ipynb)
+
 # ColabでFacebookのSOTAなチャットボットを動かして、ついでに日本語化してみた
 
 [こんな記事](https://ai.facebook.com/blog/state-of-the-art-open-source-chatbot)をみました。すごく自然な対話ができるということでColabで試しました。以下の手順で実行するだけで再現できるようにしてあります。
