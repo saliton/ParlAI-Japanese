@@ -60,7 +60,7 @@ EPOCH DONE
 
 
 
-```
+```Shell
 !python parlai/scripts/safe_interactive.py -t blended_skill_talk -mf zoo:blender/blender_3B/model
 ```
 
@@ -99,7 +99,7 @@ EPOCH DONE
 さて、これだけだと、ただのご紹介になってしまうので、これを[translators](https://github.com/uliontse/translators)を使って日本語化してみましょう。入力と出力にGoogle翻訳を挟みます。translatorsのインストールと使い方は以下になります。ただし、利用は学生および個人に制限されていますので、商用にはご使用にならないよう、お願いします。
 
 
-```
+```Shell
 !pip install translators
 ```
 
@@ -119,7 +119,7 @@ Google翻訳、いまいちですね。実はこれ、DeepL翻訳だと「今日
 デバッガーでステップ実行して調べたところ、ユーザーからの入力は以下の部分でした。
 
 
-```
+```Shell
 !cat -n parlai/agents/safe_local_human/safe_local_human.py | tail +97 | head -5
 ```
 
@@ -133,7 +133,7 @@ Google翻訳、いまいちですね。実はこれ、DeepL翻訳だと「今日
 これを以下のコマンドで書き換えます。
 
 
-```
+```Shell
 !mv parlai/agents/safe_local_human/safe_local_human.py .
 !sed -e "12i import translators as ts" \
  -e "s/return reply_text$/reply_text = ts.google(reply_text, to_language='en'); print(reply_text); return reply_text/" \
@@ -152,7 +152,7 @@ Google翻訳、いまいちですね。実はこれ、DeepL翻訳だと「今日
 チャットボットから出力は以下の部分です。
 
 
-```
+```Shell
 !cat -n parlai/utils/misc.py | tail +793 | head -2
 ```
 
@@ -163,7 +163,7 @@ Google翻訳、いまいちですね。実はこれ、DeepL翻訳だと「今日
 これを以下のコマンドで書き換えます
 
 
-```
+```Shell
 !mv parlai/utils/misc.py .
 !sed -e "10i import translators as ts" \
   -e "s/], max_len)$/], max_len); print(text); text = ts.google(text, to_language='ja')/" \
@@ -179,7 +179,7 @@ Google翻訳、いまいちですね。実はこれ、DeepL翻訳だと「今日
 それでは実行してみましょう。翻訳前後のテキストも表示するようにしてあります。
 
 
-```
+```Shell
 %cd /root/ParlAI
 !python parlai/scripts/safe_interactive.py -t blended_skill_talk -mf zoo:blender/blender_3B/model
 ```
