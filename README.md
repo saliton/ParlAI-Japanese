@@ -104,7 +104,7 @@ EPOCH DONE
 ```
 
 
-```
+```Python
 import translators as ts
 from loguru import logger
 logger.disable('translators') # ログ出力を抑制します
