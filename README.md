@@ -7,7 +7,7 @@
 さっそく[github](https://github.com/facebookresearch/ParlAI)の手順に従って、インストールします。
 
 
-```
+```Shell
 !git clone https://github.com/facebookresearch/ParlAI.git /root/ParlAI
 %cd /root/ParlAI
 !python setup.py develop
@@ -16,14 +16,14 @@
 チャットボットを走らせる前に以下のコマンドを実行する必要があります。これをせずに走らせるとエラーとなって、このコマンドを先に実行せよとのメッセージが出ます。ここではあらかじめ実行しておきましょう。
 
 
-```
+```Shell
 !pip install 'git+https://github.com/rsennrich/subword-nmt.git#egg=subword-nmt'
 ```
 
 下記のコマンドで一番小さいサイズのチャットボットが走ります。初回起動時は90Mバイトのモデルをダウンロードするので、入力状態になるまで数十秒の時間がかかります。「Enter Your Message:」のプロンプトが出たら、英語でメッセージを入力してみましょう。対話を終了するには[EXIT]を入力します。
 
 
-```
+```Shell
 !python parlai/scripts/safe_interactive.py -t blended_skill_talk -mf zoo:blender/blender_90M/model
 ```
 
