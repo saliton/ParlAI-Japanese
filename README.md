@@ -1,4 +1,4 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Soliton-Analytics-Team/ParlAI-Japanese/blob/master/ParlAI.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/saliton/ParlAI-Japanese/blob/master/ParlAI.ipynb)
 
 # ColabでFacebookのSOTAなチャットボットを動かして、ついでに日本語化してみた
 
